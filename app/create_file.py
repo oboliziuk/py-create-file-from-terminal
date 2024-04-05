@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 def create_file(filename: str, content: list[str]) -> None:
-    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     mode = "a" if os.path.exists(filename) else "w"
 
     with open(filename, mode) as file:
@@ -13,6 +13,7 @@ def create_file(filename: str, content: list[str]) -> None:
 
         for i, line in enumerate(content, start=1):
             file.write(f"{i} {line}\n")
+
 
 def main() -> None:
     if len(sys.argv) < 3:
