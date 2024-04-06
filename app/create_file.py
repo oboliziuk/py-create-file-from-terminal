@@ -12,6 +12,8 @@ def create_file(filename: str, content: list[str]) -> None:
             file.write(timestamp + "\n")
 
         for i, line in enumerate(content, start=1):
+            if mode == "a" and i == 1:
+                file.write(timestamp + "\n")
             file.write(f"{i} {line}\n")
 
 
