@@ -44,6 +44,11 @@ def main() -> None:
 
         create_file(filename)
 
+    elif "-d" in sys.argv and "-f" not in sys.argv:
+        directory_index = sys.argv.index("-d") + 1
+        directory_path = os.path.join(*sys.argv[directory_index:])
+        os.makedirs(directory_path, exist_ok=True)
+
 
 if __name__ == "__main__":
     main()
